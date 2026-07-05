@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HUOKAING THARA BANK | OPERATIONAL CONTROL</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .success-banner { background: #0d2c54; border: 1px solid #00ffcc; padding: 15px; color: #00ffcc; text-align: center; margin-bottom: 20px; }
+        .phase-card { border: 1px solid #c5a059; padding: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🚨 HUOKAING THARA BANK: PHASE 2 OPERATIONAL</h1>
+        <div class="success-banner">
+            ✅ LABOR CONTRACTS FOR "PROGRAMMERS & DEVS" PAID. PHASE 1 SUCCESSFUL.
+        </div>
+    </header>
+
+    <!-- LIVE LABOR TRACKER -->
+    <section>
+        <h3>💰 LABOR DISBURSEMENT & MONITORING</h3>
+        <table id="labor-table">
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Status</th>
+                    <th>Disbursement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="color:#00ffcc;">
+                    <td>Elite Developers & Programmers</td>
+                    <td>PAID / SUCCESSFUL</td>
+                    <td>$30.70B TOTAL</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- NEXT PHASE MONITORING -->
+    <section class="phase-card">
+        <h3>⚠️ MONITORING PHASE 2: CYBERSECURITY ENFORCEMENT</h3>
+        <p><strong>Target:</strong> Threat mitigation and hardening of systemic routing endpoints.</p>
+        <ul id="monitoring-feed">
+            <li>[14:26:01] System initializing offensive security protocols...</li>
+            <li>[14:26:10] Threat hunters active.</li>
+        </ul>
+    </section>
+</div>
+
+<script>
+    // MONITORING FEED SIMULATOR
+    setInterval(() => {
+        const feed = document.getElementById("monitoring-feed");
+        const logs = [
+            "Network handshake secure.",
+            "Database latency within thresholds.",
+            "Cybersecurity threat hunting active.",
+            "Hardware sync confirmed."
+        ];
+        const log = document.createElement("li");
+        log.textContent = `[${new Date().toLocaleTimeString()}] ${logs[Math.floor(Math.random()*logs.length)]}`;
+        feed.prepend(log);
+        if(feed.children.length > 5) feed.lastElementChild.remove();
+    }, 3000);
+</script>
+
+</body>
+</html>
