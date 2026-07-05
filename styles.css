@@ -10,7 +10,7 @@
     --accent-red: #ff3366;
     --accent-gold: #c5a059;
     --text-glow: 0 0 10px rgba(0, 255, 204, 0.5);
-}
+} 
 
 body {
     background-color: var(--bg-dark);
