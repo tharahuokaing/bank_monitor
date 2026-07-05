@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HUOKAING THARA BANK | OPERATIONAL CONTROL</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -36,12 +36,11 @@
         </table>
     </section>
 
-    <!-- NEXT PHASE MONITORING & LANGUAGE CONTROLS -->
+    <!-- AI MONITORING & LANGUAGE CONTROLS -->
     <section class="phase-card">
         <h3 id="monitor-title">⚠️ MONITORING PHASE 2: CYBERSECURITY ENFORCEMENT</h3>
         <p id="monitor-desc"><strong>Target:</strong> Threat mitigation and hardening of systemic routing endpoints.</p>
         
-        <!-- Language Selection -->
         <div id="lang-controls" style="margin: 20px 0;">
             <button onclick="changeLanguage('en')">🇬🇧 EN</button>
             <button onclick="changeLanguage('fr')">🇫🇷 FR</button>
@@ -50,14 +49,20 @@
             <button onclick="changeLanguage('it')">🇮🇹 IT</button>
         </div>
 
-        <ul id="monitoring-feed">
+        <div style="background: #000; padding: 15px; border: 1px solid #c5a059;">
+            <h4>🤖 AI CORE ANALYSIS FEED</h4>
+            <ul id="ai-feed">
+                <li>[SYSTEM]: Analyzing network integrity...</li>
+            </ul>
+        </div>
+        
+        <ul id="monitoring-feed" style="margin-top: 20px;">
             <li>[14:26:01] System initializing offensive security protocols...</li>
         </ul>
     </section>
 </div>
 
 <script>
-    // Multilingual Dictionary
     const dictionary = {
         en: { title: "⚠️ MONITORING PHASE 2: CYBERSECURITY ENFORCEMENT", desc: "Target: Threat mitigation and hardening of systemic routing endpoints." },
         fr: { title: "⚠️ SURVEILLANCE PHASE 2 : RENFORCEMENT CYBERSÉCURITÉ", desc: "Cible : Atténuation des menaces et durcissement des points de routage." },
@@ -71,15 +76,26 @@
         document.getElementById("monitor-desc").innerHTML = `<strong>Target:</strong> ${dictionary[lang].desc}`;
     }
 
-    // MONITORING FEED SIMULATOR
+    // AI CORE SIMULATOR
+    setInterval(() => {
+        const aiFeed = document.getElementById("ai-feed");
+        const insights = [
+            "AI: Threat vectors within safety parameters.",
+            "AI: Optimizing bandwidth allocation for secure routing.",
+            "AI: Cybersecurity layer confirmed at 99.9% efficiency.",
+            "AI: No anomalies detected in current node architecture."
+        ];
+        const insight = document.createElement("li");
+        insight.style.color = "#c5a059";
+        insight.textContent = `[AI CORE]: ${insights[Math.floor(Math.random()*insights.length)]}`;
+        aiFeed.prepend(insight);
+        if(aiFeed.children.length > 3) aiFeed.lastElementChild.remove();
+    }, 5000);
+
+    // OPERATIONAL LOGS
     setInterval(() => {
         const feed = document.getElementById("monitoring-feed");
-        const logs = [
-            "Network handshake secure.",
-            "Database latency within thresholds.",
-            "Cybersecurity threat hunting active.",
-            "Hardware sync confirmed."
-        ];
+        const logs = ["Network handshake secure.", "Database latency optimal.", "Security nodes stable."];
         const log = document.createElement("li");
         log.textContent = `[${new Date().toLocaleTimeString()}] ${logs[Math.floor(Math.random()*logs.length)]}`;
         feed.prepend(log);
@@ -88,4 +104,4 @@
 </script>
 
 </body>
-</html>               
+</html>
