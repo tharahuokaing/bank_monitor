@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>HUOKAING THARA BANK | OPERATIONAL CONTROL</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .success-banner { background: #0d2c54; border: 1px solid #00ffcc; padding: 15px; color: #00ffcc; text-align: center; margin-bottom: 20px; }
-        .phase-card { border: 1px solid #c5a059; padding: 20px; margin-top: 20px; }
-    </style>
 </head>
 <body>
 
@@ -40,18 +36,41 @@
         </table>
     </section>
 
-    <!-- NEXT PHASE MONITORING -->
+    <!-- NEXT PHASE MONITORING & LANGUAGE CONTROLS -->
     <section class="phase-card">
-        <h3>⚠️ MONITORING PHASE 2: CYBERSECURITY ENFORCEMENT</h3>
-        <p><strong>Target:</strong> Threat mitigation and hardening of systemic routing endpoints.</p>
+        <h3 id="monitor-title">⚠️ MONITORING PHASE 2: CYBERSECURITY ENFORCEMENT</h3>
+        <p id="monitor-desc"><strong>Target:</strong> Threat mitigation and hardening of systemic routing endpoints.</p>
+        
+        <!-- Language Selection -->
+        <div id="lang-controls" style="margin: 20px 0;">
+            <button onclick="changeLanguage('en')">🇬🇧 EN</button>
+            <button onclick="changeLanguage('fr')">🇫🇷 FR</button>
+            <button onclick="changeLanguage('de')">🇩🇪 DE</button>
+            <button onclick="changeLanguage('es')">🇪🇸 ES</button>
+            <button onclick="changeLanguage('it')">🇮🇹 IT</button>
+        </div>
+
         <ul id="monitoring-feed">
             <li>[14:26:01] System initializing offensive security protocols...</li>
-            <li>[14:26:10] Threat hunters active.</li>
         </ul>
     </section>
 </div>
 
 <script>
+    // Multilingual Dictionary
+    const dictionary = {
+        en: { title: "⚠️ MONITORING PHASE 2: CYBERSECURITY ENFORCEMENT", desc: "Target: Threat mitigation and hardening of systemic routing endpoints." },
+        fr: { title: "⚠️ SURVEILLANCE PHASE 2 : RENFORCEMENT CYBERSÉCURITÉ", desc: "Cible : Atténuation des menaces et durcissement des points de routage." },
+        de: { title: "⚠️ ÜBERWACHUNG PHASE 2: CYBER-SICHERHEITS-DURCHSETZUNG", desc: "Ziel: Bedrohungsabwehr und Härtung der Routing-Endpunkte." },
+        es: { title: "⚠️ MONITOREO FASE 2: CIBERSEGURIDAD", desc: "Objetivo: Mitigación de amenazas y endurecimiento de puntos finales." },
+        it: { title: "⚠️ MONITORAGGIO FASE 2: ENFORCEMENT CYBERSICUREZZA", desc: "Obiettivo: Mitigazione delle minacce e protezione degli endpoint." }
+    };
+
+    function changeLanguage(lang) {
+        document.getElementById("monitor-title").textContent = dictionary[lang].title;
+        document.getElementById("monitor-desc").innerHTML = `<strong>Target:</strong> ${dictionary[lang].desc}`;
+    }
+
     // MONITORING FEED SIMULATOR
     setInterval(() => {
         const feed = document.getElementById("monitoring-feed");
@@ -69,4 +88,4 @@
 </script>
 
 </body>
-</html>
+</html>               
